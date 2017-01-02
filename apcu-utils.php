@@ -53,3 +53,15 @@ function getFragmentationRatio(): float
 
     return $fragsize / $mem_avail;
 }
+
+/**
+ * Returns the amount of available (free) cache memory.
+ *
+ * @return int
+ */
+function getMemoryAvailable(): int
+{
+    $mem = apcu_sma_info();
+
+    return $mem['avail_mem'];
+}
