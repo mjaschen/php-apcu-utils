@@ -1,0 +1,26 @@
+{
+  "name": "mjaschen/php-apcu-utils",
+  "description": "A set of utility functions for the APCu PHP extension.",
+  "keywords": [
+    "php",
+    "apc",
+    "apcu",
+    "cache"
+  ],
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Marcus Jaschen",
+      "email": "mjaschen@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.0"
+  },
+  "autoload": {
+    "files": [
+      "apcu-utils.php"
+    ]
+  }
+}
