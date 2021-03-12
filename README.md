@@ -12,14 +12,14 @@ composer require mjaschen/php-apcu-utils
 
 ### Compatibility
 
-The APCu Utils require PHP 7.0.
+The APCu Utils require PHP >= 7.3.
 
 ### Usage/Examples
 
 ```php
 <?php
 
-use MarcusJaschen\APCu;
+use MarcusJaschen\APCu\ApcuUtils;
 
-printf('APCu fragmentation is %.1f%%', getFragmentationRatio());
+printf('APCu fragmentation is %.1f%%', ApcuUtils::getFragmentationRatio());
 ```

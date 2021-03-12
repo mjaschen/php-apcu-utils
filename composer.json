@@ -1,5 +1,6 @@
 {
   "name": "mjaschen/php-apcu-utils",
+  "type": "library",
   "description": "A set of utility functions for the APCu PHP extension.",
   "keywords": [
     "php",
@@ -7,7 +8,6 @@
     "apcu",
     "cache"
   ],
-  "type": "library",
   "license": "MIT",
   "authors": [
     {
@@ -16,11 +16,35 @@
     }
   ],
   "require": {
-    "php": ">=7.0"
+    "php": ">=7.3",
+    "ext-apcu": "*"
+  },
+  "require-dev": {
+    "ergebnis/composer-normalize": "^2.13",
+    "friendsofphp/php-cs-fixer": "^2.18",
+    "squizlabs/php_codesniffer": "^3.5",
+    "vimeo/psalm": "^4.6",
+    "php-parallel-lint/php-parallel-lint": "^1.2"
   },
   "autoload": {
-    "files": [
-      "apcu-utils.php"
-    ]
+    "psr-4": {
+      "MarcusJaschen\\APCu\\": "src"
+    }
+  },
+  "scripts": {
+    "ci": [
+      "@ci:static"
+    ],
+    "ci:lint": "./vendor/bin/parallel-lint src",
+    "ci:phpcs": "./vendor/bin/phpcs --standard=phpcs.xml src",
+    "ci:psalm": "./vendor/bin/psalm --no-cache",
+    "ci:static": [
+      "@ci:validate-composer",
+      "@ci:lint",
+      "@ci:phpcs",
+      "@ci:psalm"
+    ],
+    "ci:validate-composer": "composer validate --no-check-all --strict",
+    "fix:php-cs": "./vendor/bin/php-cs-fixer fix"
   }
 }
