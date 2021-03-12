@@ -1,5 +1,7 @@
 # APCu Utils
 
+[![PHP APCu Utils Tests](https://github.com/mjaschen/php-apcu-utils/actions/workflows/php.yml/badge.svg)](https://github.com/mjaschen/php-apcu-utils/actions/workflows/php.yml)
+
 A set of utility functions for the APCu PHP extension.
 
 ### Installation
